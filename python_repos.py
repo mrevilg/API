@@ -12,6 +12,13 @@ print("Total Repositories:", response_dict['total_count'])
 # Explore information about repositories.
 repo_dicts = response_dict['items']
 print("Repositories returned:", len(repo_dicts))
+print("\nSelected information about each repository:")
+for repo_dict in repo_dicts:
+    print('\nName:', repo_dict['name'])
+    print('Owner:', repo_dict['owner']['login'])
+    print('Stars:', repo_dict['stargazers_count'])
+    print('Repository:', repo_dict['html_url'])
+    print('Description:', repo_dict['description'])
 
 # Examin first repo
 repo_dict = repo_dicts[0]
@@ -25,6 +32,6 @@ print('Created:', repo_dict['created_at'])
 print('Updated:', repo_dict['updated_at'])
 print('Description:', repo_dict['description'])
 
-print("\nKeys:", len(repo_dict))
-for key in sorted(repo_dict.keys()):
-    print(key)
+#print("\nKeys:", len(repo_dict))
+#for key in sorted(repo_dict.keys()):
+#    print(key)
